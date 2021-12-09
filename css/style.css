@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+@import "reset.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.header .header-col {
+    display: flex;
+    margin: 15px 15px;
+    color: #000;
+    font-weight: 700;
+    align-items: center;
+}
+
+.header-col .logo {
+    width: 150px;
+    height: 25px;
+    background: url(../images/logo_b.png) no-repeat center center;
+    background-size: 100%;
+    margin-right: 5px;
+
+}
+
+
+
+.header-col .list-menu {
+    display: flex;
+    
+}
+.header-col .list-menu li {
+    display: flex;
+    
+    height: 50px;
+    align-items: center;
+    font-size: 17px;
+    margin-left: 40px;
+}
+.header-col li{
+    position:relative;
+}
+
+.header-col .list-lang {
+    position: absolute;
+    margin-top: 5px;
+    padding: 5px 3px;
+    right: 0px;
+    border: 1px solid #fff;
+}
+
+.header-col .list-lang li {
+    padding: 5px 20px;
+    
+}
+
+
+.header-col .btn-lang {
+    display: flex;
+    align-items: center;
+    
+}
+
+.header-col .btn-search {
+    padding-left: 10px;
+}
+
+.header-col .btn-search::before {
+    display: inline-block;
+    content: '';
+    height: 18px;
+    width: 1px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
