@@ -4,6 +4,7 @@
 
 body{
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f7f8f9;
 }
 
 /* header.header */
@@ -21,14 +22,14 @@ body{
 .header .header-col {
     display: flex;
     margin: 15px 15px;
-    color: #000;
+    color: #fff;
     font-weight: 700;
     align-items: center;
 }
 .header-col .logo {
     width: 150px;
     height: 25px;
-    background: url(../images/logo_b.png) no-repeat center center;
+    background: url(../images/logo_w.png) no-repeat center center;
     background-size: 100%;
     margin-right: 5px;
 }
@@ -76,7 +77,8 @@ main {
     background-color: #f7f8f9;
     min-width: 1200px;
 }
-main .container {
+main .container
+,.cont-container {
     box-sizing: border-box;
     width: 1200px;
     padding: 0 55px;
@@ -130,7 +132,7 @@ main .careers .btn-scroll {
     height: 65px;
     margin-left: 20px;
     text-align: center;
-    background-color: blue;
+    /* background-color: blue; */
     border-radius: 100%;
 }
 .cont-combo .btn-next .material-icons-outlined {
@@ -167,15 +169,31 @@ main .explore {
     width: 48%;
     margin-bottom: 50px;
 }
-.list-cards li:hover {
-    content: '';
-    border-bottom: green 1px solid;
-}
-.list-cards li img {
+.list-cards li div[class^="img"] {
+    position: relative;
+    background: url(../images/card-news/card1.jpg) no-repeat;
+    background-size: 100%;
     width: 100%;
     height: 244px;
     margin-bottom: 15px;
-    object-fit: cover;
+}
+.list-cards li a .img2 {
+    background: url(../images/card-news/card2.jpg) no-repeat center center;
+}
+.list-cards li a .img3 {
+    background: url(../images/card-news/card3.jpg) no-repeat center center;
+}
+.list-cards li a .img4 {
+    background: url(../images/card-news/card4.jpg) no-repeat center center;
+}
+.list-cards li div[class^="img"]:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: green 3px solid;
 }
 .list-cards .card-title {
     font-size: 24px;
@@ -196,8 +214,11 @@ main .explore {
     position: relative;
     height: 882px;
     background: url(../images/liners/liners_bg.jpg) no-repeat;
-    background-size: 100%;
-    background-position: 100% -500px;
+    background-size: 2000px;
+    background-position: 50% 200%;
+}
+.liners .container {
+    position: relative;
 }
 .liners h2 {
     padding: 10% 0 7%;
@@ -215,6 +236,7 @@ main .explore {
     width: 31.5%;
     position: relative;
     padding: 25px;
+    background: #fff;
     box-sizing: border-box;
 }
 .liners .list-liners a {
@@ -229,32 +251,38 @@ main .explore {
     right: 0;
     bottom: 0;
     left: 0;
-    border: 1px solid blue;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 .list-liners a > .liner-title {
-    height: 60%;
+    height: 50%;
     font-size: 46px;
-    
 }
 .list-liners .liner-name {
+    margin-bottom: 8px;
     font-size: 28px;
 }
 .list-liners .liner-text {
-    margin-top: 15%;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
     font-weight: 400;
+    line-height: 1.2;
     color: #616161;
 }
 .list-liners .liner-hover {
     position: absolute;
-    transition: all 1s;
-}
-.list-liners li:hover .liner-hover{
-    background: url(../images/liners/liners1.jpg) no-repeat center center;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    background: url(../images/liners/liners1.jpg) no-repeat center center;
     color: #fff;
+    opacity: 0%;
+    transition: all 1s;
+}
+.list-liners li:hover .liner-hover{
+    opacity: 100%;
 }
 .list-liners .liner-hover .liner-title {
     display: flex;
@@ -270,5 +298,85 @@ main .explore {
 .liners .btn-more {
     position: absolute;
     right: 5%;
-    bottom: 5%;
+    bottom: -10%;
+}
+/* footer.cont-footer */
+.cont-footer .cont-container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(225, 225, 225);
+    padding: 50px 0;
+}
+.cont-footer .cont-container,
+.cont-container .footer-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+}
+.cont-footer .copy {
+    color: rgb(30, 30, 30);
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 49px;
+}
+.cont-footer .privacy {
+    font-size: 12px;
+    font-weight: 700;
+}
+.footer-col>li {
+    display: flex;
+    align-items: center;
+}
+.footer-col li {
+    position: relative;
+}
+.footer-col .btn-site {
+    padding: 0 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+.footer-col .web-list {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    line-height: 2;
+    border: 1px solid #e1e1e1;
+    color: #e1e1e1;
+    padding: 5px 13px;
+    background: #fff;
+}
+.footer-col .list-sns {
+    display: flex;
+    padding-left: 20px;
+}
+.list-sns button[class^="sns"] {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    background-size: 100%;
+}
+.list-sns .sns-instagram {
+    background: url("../images/sns/instagram.svg") no-repeat;
+}
+.list-sns .sns-facebook {
+    background: url("../images/sns/facebook.svg") no-repeat;
+}
+.list-sns .sns-github {
+    background: url("../images/sns/github.svg") no-repeat;
+}
+.list-sns .sns-youtube {
+    background: url("../images/sns/youtube.svg") no-repeat;
+}
+.list-sns .sns-info {
+    position: absolute;
+    bottom: 30px;
+    right: -50px;
+    left: -50px;
+    line-height: 2;
+    border: 1px solid #e1e1e1;
+    color: #e1e1e1;
+    padding: 5px 13px;
+    background: #fff;
 }
