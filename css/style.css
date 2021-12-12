@@ -80,7 +80,6 @@ main .container {
     box-sizing: border-box;
     width: 1200px;
     padding: 0 55px;
-
     margin: 0 auto;
 }
 /* section.careers */
@@ -90,6 +89,7 @@ main .careers{
     justify-content: center;
     margin: 0 auto;
     background-color: bisque;
+    color: #fff;
     width: 100%;
     height: 919px;
     /* padding-left: 30px; */
@@ -144,6 +144,13 @@ main .careers .btn-scroll {
 main .explore {
     height: 1140px;
 }
+.explore .container {
+    box-sizing: border-box;
+    position: relative;
+    width: 1200px;
+    padding: 0 55px;
+    margin: 0 auto;
+}
 .explore h2 {
     margin-top: 120px;
     font-size: 60px;
@@ -151,14 +158,18 @@ main .explore {
 }
 .explore .list-cards{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     padding: 50px 0;
 }
 .list-cards li {
     width: 48%;
     margin-bottom: 50px;
+}
+.list-cards li:hover {
+    content: '';
+    border-bottom: green 1px solid;
 }
 .list-cards li img {
     width: 100%;
@@ -175,4 +186,89 @@ main .explore {
     margin-top: 10px;
     color: #616161;
     line-height: 1.4;
+}
+.explore .btn-more {
+    position: absolute;
+    right:5%
+}
+/* main.liners */
+.liners {
+    position: relative;
+    height: 882px;
+    background: url(../images/liners/liners_bg.jpg) no-repeat;
+    background-size: 100%;
+    background-position: 100% -500px;
+}
+.liners h2 {
+    padding: 10% 0 7%;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+}
+.liners .list-liners {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    position: relative;
+}
+.liners .list-liners li {
+    width: 31.5%;
+    position: relative;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.liners .list-liners a {
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+.liners .list-liners a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid blue;
+}
+.list-liners a > .liner-title {
+    height: 60%;
+    font-size: 46px;
+    
+}
+.list-liners .liner-name {
+    font-size: 28px;
+}
+.list-liners .liner-text {
+    margin-top: 15%;
+    font-weight: 400;
+    color: #616161;
+}
+.list-liners .liner-hover {
+    position: absolute;
+    transition: all 1s;
+}
+.list-liners li:hover .liner-hover{
+    background: url(../images/liners/liners1.jpg) no-repeat center center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+}
+.list-liners .liner-hover .liner-title {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    font-size: 46px;
+}
+.list-liners .liner-hover .liner-more {
+    position: absolute;
+    top: 90%;
+    left: 25px;
+}
+.liners .btn-more {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
 }
