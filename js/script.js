@@ -10,7 +10,10 @@ function logic(){
         end.forEach((e)=>{
             e.classList.remove('on');
         });
-        arrow.forEach((e)=>e.textContent='keyboard_arrow_down');
+        
+        arrow.forEach((e)=>{
+            if(e.textContent=='keyboard_arrow_up')
+            e.textContent='keyboard_arrow_down'});
     }
     list.classList.toggle('on');
     if(check.textContent != 'keyboard_arrow_up'){
