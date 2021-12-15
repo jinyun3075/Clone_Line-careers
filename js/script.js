@@ -5,7 +5,6 @@ function logic(){
     let list = this.parentNode.querySelector('ul');
     let arrow =this.parentNode.parentNode.querySelectorAll('li span:last-child');
     let check =this.querySelector('span:last-child');
-    console.log(arrow.textContent);
     if(!list.classList.contains('on')){
         end.forEach((e)=>{
             e.classList.remove('on');
