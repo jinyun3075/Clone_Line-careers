@@ -2,11 +2,22 @@ let btn = document.querySelector('.btn-lang');
 let btncombo = document.querySelectorAll('.btn-combo');
 function logic(){
     let end =this.parentNode.parentNode.querySelectorAll('ul');
-    end.forEach((e)=>e.classList.remove('on'));
     let list = this.parentNode.querySelector('ul');
+    let arrow =this.parentNode.parentNode.querySelectorAll('li span:last-child');
+    let check =this.querySelector('span:last-child');
+    console.log(arrow.textContent);
+    if(!list.classList.contains('on')){
+        end.forEach((e)=>{
+            e.classList.remove('on');
+        });
+        arrow.forEach((e)=>e.textContent='keyboard_arrow_down');
+    }
     list.classList.toggle('on');
-    // let check =this.querySelector('span:last-child').textContent;
-    // console.log(check)
+    if(check.textContent != 'keyboard_arrow_up'){
+        check.textContent = 'keyboard_arrow_up';
+    }else {
+        check.textContent = 'keyboard_arrow_down';
+    }
 }
 btn.onclick = logic;
 btncombo.forEach((e)=>e.onclick=logic);
