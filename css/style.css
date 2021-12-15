@@ -6,6 +6,8 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #f7f8f9;
 }
+/* animation */
+
 /* header.header */
 .header {
     display: flex;
@@ -17,12 +19,17 @@ body{
     right: 0;
     z-index: 10;
     padding: 5px 10px;
-    background-color:rgba(0, 0, 0, 0.5);
+    color: #fff;
+    background-color:rgba(0, 0, 0, 0);
+    transition: all 0.3s;
+}
+.header.op {
+    color: #000;
+    background-color:#fff;
 }
 .header .header-col {
     display: flex;
     margin: 15px 15px;
-    color: #fff;
     font-weight: 700;
     align-items: center;
 }
@@ -32,6 +39,11 @@ body{
     background: url(../images/logo_w.png) no-repeat center center;
     background-size: 100%;
     margin-right: 5px;
+    transition: all 0.3s;
+}
+.header-col .logo.op {
+    background: url(../images/logo_b.png) no-repeat center center;
+    background-size: 100%;
 }
 .header-col .list-menu {
     display: flex;
@@ -54,11 +66,24 @@ body{
     right: 0px;
     border: 1px solid #fff;
 }
+.header-col .list-lang.op {
+    color: rgb(153,153,153);
+    background-color: #fff;
+    border: 1px solid #000;
+}
 .header-col .list-lang.on {
     display: block;
 }
-.header-col .list-lang li {
+
+.header-col .list-lang li a {
+    display: block;
     padding: 5px 20px;
+}
+.header-col .list-lang a:hover {
+    color: rgb(153,153,153);
+}
+.header-col .list-lang.op a:hover {
+    color: #000;
 }
 .header-col .btn-lang {
     display: flex;
@@ -96,7 +121,6 @@ main .container {
 /* section.careers */
 main video {
     min-height: 100%;
-    /* background-size: 100%; */
     object-fit: cover;
 }
 main .careers{
@@ -108,7 +132,6 @@ main .careers{
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
     height: 100vh;
-    /* padding-left: 30px; */
 }
 main .careers h2 {
     font-size: 90px;
@@ -116,9 +139,53 @@ main .careers h2 {
     padding-bottom: 50px ;
     line-height: 1.1;
 }
+.cont-combo .btn-next {
+    width: 65px;
+    height: 65px;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 100%;
+}
+.cont-combo .btn-next .material-icons-outlined {
+    line-height: 65px;
+}
+.cont-combo ul[class^="list"] {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    height: 200px;
+    margin-top: 20px;
+    padding-right: 20px;
+    line-height: 2;
+}
+.cont-combo ul[class^="list"].on {
+    display: block;
+}
+/* .cont-combo ul .list-city.on{
+    display: block;
+}
+.cont-combo ul .list-job.on {
+    display: block;
+}
+.cont-combo ul .btn-next.on {
+    display: block;
+} */
+.cont-combo ul[class^="list"]::-webkit-scrollbar {
+    width: 3px;
+}
+.cont-combo ul[class^="list"]::-webkit-scrollbar-track {
+    background: transparent;
+}
+.cont-combo ul[class^="list"]::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #fff;
+}
+.cont-combo ul[class^="list"] li a {
+    display: block;
+}
 main .careers .btn-scroll {
     position: absolute;
-    bottom: -90%;
+    bottom: -80%;
     left: 50%;
     text-align: center;
     font-size: 11px;
@@ -126,9 +193,9 @@ main .careers .btn-scroll {
 }
 .careers .btn-scroll .material-icons-outlined {
     display: block;
-    
 }
 .careers .cont-combo {
+    position: relative;
     display: flex;
 }
 .cont-combo .btn-combo {
@@ -140,20 +207,6 @@ main .careers .btn-scroll {
 }
 .cont-combo .btn-combo .material-icons-outlined {
     padding-left: 120px;
-}
-.cont-combo .btn-next {
-    width: 65px;
-    height: 65px;
-    margin-left: 20px;
-    text-align: center;
-    /* background-color: blue; */
-    border-radius: 100%;
-}
-.cont-combo .btn-next .material-icons-outlined {
-    line-height: 65px;
-}
-.cont-combo ul[class^="list"] {
-    display: none;
 }
 /* main.explore */
 main .explore {
