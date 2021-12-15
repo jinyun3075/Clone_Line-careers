@@ -1,9 +1,15 @@
 let btn = document.querySelector('.btn-lang');
-function a(){
-    let lang = document.querySelector('.list-lang');
-    lang.classList.toggle('on');    
+let btncombo = document.querySelectorAll('.btn-combo');
+function logic(){
+    let end =this.parentNode.parentNode.querySelectorAll('ul');
+    end.forEach((e)=>e.classList.remove('on'));
+    let list = this.parentNode.querySelector('ul');
+    list.classList.toggle('on');
+    // let check =this.querySelector('span:last-child').textContent;
+    // console.log(check)
 }
-btn.onclick = a;
+btn.onclick = logic;
+btncombo.forEach((e)=>e.onclick=logic);
 
 let header = document.querySelector('.header');
 let logo = document.querySelector('.logo');
@@ -20,4 +26,3 @@ window.onscroll =function() {
         })
     }
 };
-

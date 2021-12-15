@@ -55,6 +55,23 @@ body{
     font-size: 17px;
     margin-left: 40px;
 }
+.header-col .list-menu li a {
+    position: relative;
+}
+.header-col .list-menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 5px;
+    background-color: green;
+    transition: all 0.5s;
+}
+.header-col .list-menu li:hover a::after{
+    width: 100%;
+    background-color: #fff;
+}
 .header-col>li {
     position:relative;
 }
@@ -74,7 +91,6 @@ body{
 .header-col .list-lang.on {
     display: block;
 }
-
 .header-col .list-lang li a {
     display: block;
     padding: 5px 20px;
