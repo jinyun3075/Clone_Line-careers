@@ -171,7 +171,7 @@ main .careers h2 {
     overflow: auto;
     height: 200px;
     margin-top: 20px;
-    padding-right: 20px;
+    padding-right: 80px;
     line-height: 2;
 }
 .cont-combo ul[class^="list"].on {
@@ -196,8 +196,9 @@ main .careers h2 {
     border-radius: 6px;
     background: #fff;
 }
-.cont-combo ul[class^="list"] li a {
+.cont-combo ul[class^="list"] li a:hover {
     display: block;
+    color: #07b53b;
 }
 main .careers .btn-scroll {
     position: absolute;
@@ -217,9 +218,17 @@ main .careers .btn-scroll {
 .cont-combo .btn-combo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 0;
-    border-bottom: 1px solid #fff;
     font-size: 18px;
+    width: 250px;
+}
+.cont-combo .btn-combo::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 25%;
+    border-bottom: 1px solid #fff;
 }
 .cont-combo .btn-combo .material-icons-outlined {
     padding-left: 120px;
@@ -421,6 +430,7 @@ main .explore {
     font-weight: 700;
 }
 .footer-col .web-list {
+    display: none;
     position: absolute;
     bottom: 30px;
     right: 0;
@@ -430,6 +440,9 @@ main .explore {
     color: #e1e1e1;
     padding: 5px 13px;
     background: #fff;
+}
+.footer-col .web-list.on {
+    display: block;
 }
 .footer-col .list-sns {
     display: flex;
@@ -457,13 +470,28 @@ main .explore {
     background: url("../images/sns/youtube.svg") no-repeat;
 }
 .list-sns .sns-info {
+    display: none;
     position: absolute;
-    bottom: 30px;
-    left: 0%;
+    bottom: 45px;
+    left: -43px;
     line-height: 2;
     border: 1px solid #e1e1e1;
     color: #e1e1e1;
     padding: 5px 13px;
     background: #fff;
     transform: translateX(-50%);
+}
+.list-sns .sns-info.on {
+    display: block;
+}
+.list-sns .sns-info::after {
+    content: "";
+    position: absolute;
+    right: 13px;
+    bottom: -8px;
+    width: 10px;
+    height: 8px;
+    background: url("../images/sns/sns_bg.png") no-repeat;
+    background-size: 100%;
+    transform: translateX(50%);
 }

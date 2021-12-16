@@ -1,10 +1,12 @@
-let btn = document.querySelector('.btn-lang');
-let btncombo = document.querySelectorAll('.btn-combo');
-function logic(){
-    let end =this.parentNode.parentNode.querySelectorAll('ul');
-    let list = this.parentNode.querySelector('ul');
-    let arrow =this.parentNode.parentNode.querySelectorAll('li span:last-child');
-    let check =this.querySelector('span:last-child');
+const btn = document.querySelector('.btn-lang');
+const btncombo = document.querySelectorAll('.btn-combo');
+const btnSite = document.querySelector('.btn-site');
+const snslist =document.querySelectorAll('.snslist');
+function logic (){
+    const end =this.parentNode.parentNode.querySelectorAll('ul');
+    const list = this.parentNode.querySelector('ul');
+    const arrow =this.parentNode.parentNode.querySelectorAll('li span:last-child');
+    const check =this.querySelector('span:last-child');
     if(!list.classList.contains('on')){
         end.forEach((e)=>{
             e.classList.remove('on');
@@ -21,8 +23,22 @@ function logic(){
         check.textContent = 'keyboard_arrow_down';
     }
 }
+
+function logic2(){
+    const end =this.parentNode.parentNode.querySelectorAll('ul');
+    const list = this.parentNode.querySelector('ul');
+    if(!list.classList.contains('on')){
+        end.forEach((e)=>{
+            e.classList.remove('on');
+        });
+    }
+    list.classList.toggle('on');
+}
+
 btn.onclick = logic;
 btncombo.forEach((e)=>e.onclick=logic);
+btnSite.onclick =logic2;
+snslist.forEach((e)=>e.onclick=logic2);
 
 let header = document.querySelector('.header');
 let logo = document.querySelector('.logo');
@@ -39,3 +55,14 @@ window.onscroll =function() {
         })
     }
 };
+
+const chg = document.querySelectorAll('.cont-combo ul li');
+chg.forEach((e)=>e.onclick=change);
+function change() {
+    let changeBtn = 'a';
+    let word = this.querySelector('a').innerText;
+    const ch =this.parentNode.parentNode.querySelector('.btn-combo');
+    ch.innerHTML=`${word}<span class="material-icons-outlined">keyboard_arrow_down</span>`
+    ch.parentNode.querySelector('ul').classList.toggle('on');
+    
+}
