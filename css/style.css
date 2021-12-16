@@ -68,9 +68,13 @@ body{
     background-color: green;
     transition: all 0.5s;
 }
-.header-col .list-menu li:hover a::after{
+.header-col .list-menu li:hover a::after {
     width: 100%;
     background-color: #fff;
+}
+.header.op .header-col .list-menu li:hover a::after {
+    width: 100%;
+    background-color: #000;
 }
 .header-col>li {
     position:relative;
@@ -494,4 +498,19 @@ main .explore {
     background: url("../images/sns/sns_bg.png") no-repeat;
     background-size: 100%;
     transform: translateX(50%);
+}
+.btn-scroll-top {
+    position: fixed;
+    right: 50px;
+    bottom: -100px;
+    width: 60px;
+    height: 60px;
+    background: url("../images/scroll-top.svg") no-repeat 50% 50%;
+    background-size: 60%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: bottom 0.5s;
+}
+.btn-scroll-top.scroll-up {
+    bottom: 50px;
 }
